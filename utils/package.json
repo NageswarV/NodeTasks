@@ -1,0 +1,11 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fs-demo.js",
+  "scripts": {
+    "start": "node fs-demo.js samplefolder"
+  },
+  "author": "vnr",
+  "license": "ISC"
+}
