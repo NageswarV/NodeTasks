@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>HomePage</title>
+        <script>
+            function updateAction(){
+                document.getElementById("details").setAttribute('action',location.href+"/details");
+            }
+            function updatepostAction(){
+                document.getElementById("post").setAttribute('action',location.href+'/posts');
+            }
+        </script>
+        <style>
+             .jumbotron {
+            background-color:lightblue;
+        }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="jumbotron text-center" style="margin-bottom:0">
+                <h2>Article</h2>
+            </div>
+            <center>
+                <br>
+                <form id="details" action="">
+                    <button class="btn" type="submit" onclick="updateAction()">UserDetails</button>
+               </form>
+               <form id="post" action="">
+               <button class="btn"  type="submit" onclick="updatepostAction()">posts</button>
+               </form>
+               <form action="/logout">
+                   <button class="btn"  type="submit">Logout</button>
+               </form>
+            </center>
+           
+        </main>
+        <article>
+            
+        </article>
+    </body>
+</html>

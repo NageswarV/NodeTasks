@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function getDetails() {
+            fetch('http://localhost:3000/api/user/details').then(result => {
+                result.json().then((response) => {
+                    document.querySelector('#username').innerText = response.username;
+                    document.querySelector("#email").innerText = response.email;
+                    document.querySelector("#address").innerText = response.address;
+                })
+            })
+        }
+    </script>
+    <style>
+        .jumbotron {
+            background-color:lightblue;
+        }
+        .col-xs-3{
+            margin-top:30;
+        }
+    </style>
+</head>
+
+<body onload="getDetails()">
+    <div class="jumbotron text-center" style="margin-bottom:0">
+       
+       
+        
+        <div class="row">
+            <div class="col-xs-3">
+                <form action="/login">
+                    <button type="submit">Home</button>
+                </form>
+            </div>
+            <div class="col-xs-6">
+                <h2>User Details</h2>
+            </div>
+            <div class="col-xs-3">
+                <form action="/logout">
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h1 id="main_heading"></h1>
+    <center>
+        <div>
+            <form>
+                <label>username</label>
+                <p id="username" ></p>
+                <label>Email</label>
+                <p id="email"></p>
+                <label>Address</label>
+                <p id="address"></p>
+                <!-- <input type="text" id="username" readonly>
+                <input type="text" id="email" readonly>
+                <input type="text" id="address" readonly> -->
+            <!-- </form>
+            <form action="/logout">
+                <button type="submit">Logout</button>
+            </form>
+            <form action="/login">
+                <button type="submit">Home</button>
+            </form> -->
+        </div>
+    </center>
+    
+</body>
+
+</html>
