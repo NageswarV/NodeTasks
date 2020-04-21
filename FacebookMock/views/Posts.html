@@ -1,74 +1,71 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <title>details</title>
-        <script>
-            function getPosts(){
-                
-                fetch('http://localhost:3000/api/user/posts').then(response=>{
-                    response.json().then(results=>{   
-                     for(let i=0;i<results.length;i++){
-                        var temp=document.querySelector('template').content.cloneNode(true);
-                        temp.querySelector('.post').innerText=(results[i]);
-                        document.body.appendChild(temp);
-                     }
-                    })
-                })
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>details</title>
+    <script>
+      function getPosts() {
+        fetch("http://localhost:3000/api/user/posts").then((response) => {
+          response.json().then((results) => {
+            for (let i = 0; i < results.length; i++) {
+              var temp = document
+                .querySelector("template")
+                .content.cloneNode(true);
+              temp.querySelector(".post").innerText = results[i];
+              document.body.appendChild(temp);
             }
-        </script>
-         <style>
-            .jumbotron {
-                background-color:lightblue;
-            }
-            .col-xs-3{
-                margin-top:30;
-            }
-        </style>
-    </head>
-    <body onload="getPosts()">
-        <div class="jumbotron text-center" style="margin-bottom:0">
-            <div class="row">
-                <div class="col-xs-3">
-                    <form action="/login">
-                        <button type="submit">Back</button>
-                        </form>
-                </div>
-                <div class="col-xs-6">
-                    <h2>Posts</h2>
-                </div>
-                <div class="col-xs-3">
-                    <form action="/logout">
-                        <button type="submit" >logout</button>
-                        </form>
-                </div>
-            </div>
-        </div>
-        <div id="posts" class='card'>
-
-            <!-- <form action="/logout">
-            <button type="submit" >logout</button>
-            </form>
-            <form action="/login">
+          });
+        });
+      }
+    </script>
+    <style>
+      .jumbotron {
+        background-color: lightblue;
+      }
+      .col-xs-3 {
+        margin-top: 30;
+      }
+    </style>
+  </head>
+  <body onload="getPosts()">
+    <div class="jumbotron text-center">
+      <div class="row">
+        <div class="col-xs-3">
+          <form action="/login">
             <button type="submit">Back</button>
-            </form> -->
-            <center>
-                <form action="/api/user/posts/new">
-                    <input type="text" name="post" style="margin: 20px;"><button class="btn" type="submit">AddNewPost</button> 
-                </form>
-            </center>
-           
-            
-        </div><center>
-            <template>
-                <center>
-                    <div class="post"></div>
-                </center>
-                
-           </template>
-        </center>
-       
-    </body>
+          </form>
+        </div>
+        <div class="col-xs-6">
+          <h2>Posts</h2>
+        </div>
+        <div class="col-xs-3">
+          <form action="/logout">
+            <button type="submit">logout</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="posts" class="card">
+      <main style="margin-left: 60rem;">
+        <form action="/api/user/posts/new">
+          <input type="text" name="post" style="margin: 20px;" /><button
+            class="btn"
+            type="submit"
+          >
+            AddNewPost
+          </button>
+        </form>
+      </main>
+    </div>
+    <template>
+      <center>
+        <div class="post"></div>
+      </center>
+    </template>
+  </body>
 </html>

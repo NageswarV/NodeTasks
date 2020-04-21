@@ -1,34 +1,32 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <title>loginPage</title>
-        <!-- <script>
-            function setUrl(){
-                var url="/api/auth?username="+document.getElementById('uid').value+"password="+document.getElementById('pwd');
-                document.querySelector('form').setAttribute('action',url);
-            }
-        </script>  -->
-        <style>
-            .jumbotron {
-           background-color:lightblue;
-       }
-       </style>
-    </head>
-    <body>
-        <div class="jumbotron text-center" style="margin-bottom:0">
-            <h2>Login </h2>
-        </div>
-        <center>
-            <br>
-            <form action='/api/auth'method="POST">
-                <label>UserName:</label><input type="text" id='uid' name="username"><br>
-                <label>Password:</label><input type="text" id='pwd' name="password"><br><br>
-                <button class="btn" type='submit'>Login</button>
-            </form> 
-        </center>
-        
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>loginPage</title>
+    <style>
+      .jumbotron {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron text-center" style="margin-bottom: 0;">
+      <h2>Login</h2>
+    </div>
+    <center>
+      <br />
+      <form action="/api/auth" method="POST">
+        <label>UserName:</label
+        ><input type="text" id="uid" name="username" /><br />
+        <label>Password:</label
+        ><input type="text" id="pwd" name="password" /><br /><br />
+        <button class="btn" type="submit">Login</button>
+      </form>
+    </center>
+  </body>
 </html>
